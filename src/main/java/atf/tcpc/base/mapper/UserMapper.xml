@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="atf.tcpc.base.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="atf.tcpc.base.domain.User">
+        <id column="id" jdbcType="VARCHAR" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="email" jdbcType="VARCHAR" property="email" />
+        <result column="password" jdbcType="VARCHAR" property="password" />
+        <result column="createTime" jdbcType="BIGINT" property="createTime" />
+        <result column="updateTime" jdbcType="BIGINT" property="updateTime" />
+        <result column="language" jdbcType="VARCHAR" property="language" />
+        <result column="lastWorkspaceId" jdbcType="VARCHAR" property="lastWorkspaceId" />
+        <result column="lastOrganizationId" jdbcType="VARCHAR" property="lastOrganizationId" />
+        <result column="phone" jdbcType="VARCHAR" property="phone" />
+        <result column="source" jdbcType="VARCHAR" property="source" />
+        <result column="lastProjectId" jdbcType="VARCHAR" property="lastProjectId" />
+    </resultMap>
+    <select id="selectByPrimaryKey" resultType="atf.tcpc.base.domain.User">
+        select
+               `name`,`email`,`password`
+        from user
+        where id = #{id,jdbcType=VARCHAR}
+    </select>
+</mapper>
